@@ -2,13 +2,10 @@ package nazari.sample.crud.service;
 
 import nazari.sample.crud.model.Person;
 
+import java.util.List;
+
 public interface IPersonService {
 
-    Person saveOrUpdate(Person person);
+    List<Person> findPersonByName(String name);
 
-    Person getById(Long id);
-
-    Iterable<Person> getAllPerson();
-
-    void deleteById(Long id);
 }

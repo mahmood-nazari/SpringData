@@ -4,6 +4,8 @@ import nazari.sample.crud.model.Person;
 import nazari.sample.crud.repository.IPersonDao;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonServiceImpl implements IPersonService {
 
@@ -14,23 +16,7 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
-    public Person saveOrUpdate(Person person) {
-        return iPersonDao.save(person);
-
-    }
-
-    @Override
-    public Person getById(Long id) {
-        return iPersonDao.findById(id).orElse(null);
-    }
-
-    @Override
-    public Iterable<Person> getAllPerson() {
-        return iPersonDao.findAll();
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        iPersonDao.deleteById(id);
+    public List<Person> findPersonByName(String name) {
+        return iPersonDao.findPersonByName(name);
     }
 }
