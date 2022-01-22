@@ -13,8 +13,8 @@ public class PersonController {
     private IPersonService iPersonService;
 
     /*
-    *if you set id=null this method will save your person
-    * and if you set id=(any exist id in person table) this method will update your person
+     * if you set id=null this method will save your person
+     * and if you set id=(any exist id in person table) this method will update your person
      */
     @PostMapping("save-or-update")
     public Person saveOrUpdate(@RequestBody Person person) {
