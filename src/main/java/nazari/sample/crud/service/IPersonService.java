@@ -2,6 +2,7 @@ package nazari.sample.crud.service;
 
 import nazari.sample.crud.model.Person;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface IPersonService {
@@ -15,5 +16,8 @@ public interface IPersonService {
     List<Person> findByIdLessThanEqual(Long id);
 
     List<Person> findByIdBetween(Long startId, Long endId);
+
+    List<Person> findByIdIn(Collection<Long> ids);
+
 
 }

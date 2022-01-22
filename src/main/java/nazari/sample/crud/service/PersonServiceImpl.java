@@ -5,6 +5,7 @@ import nazari.sample.crud.repository.IPersonDao;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -44,5 +45,11 @@ public class PersonServiceImpl implements IPersonService {
     @Transactional
     public List<Person> findByIdBetween(Long startId, Long endId) {
         return iPersonDao.findByIdBetween(startId, endId);
+    }
+
+    @Override
+    @Transactional
+    public List<Person> findByIdIn(Collection<Long> ids) {
+        return iPersonDao.findByIdIn(ids);
     }
 }

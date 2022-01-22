@@ -5,6 +5,8 @@ import nazari.sample.crud.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -42,4 +44,14 @@ public class PersonController {
     public List<Person> findByIdBetween(@PathVariable Long startId, @PathVariable Long endId) {
         return iPersonService.findByIdBetween(startId, endId);
     }
+
+    @PostMapping("find-by-id-in")
+    public List<Person> findByIdIn(@RequestBody Collection<Long> ids) {
+        return iPersonService.findByIdIn(ids);
+    }
+
+//    @GetMapping("/find-by-id-in")
+//    public List<Person> findByIdIn(@RequestParam Collection<Long> ids) {
+//        return iPersonService.findByIdIn(ids);
+//    }
 }
