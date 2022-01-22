@@ -4,6 +4,7 @@ import nazari.sample.crud.model.Person;
 import nazari.sample.crud.repository.IPersonDao;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -16,16 +17,19 @@ public class PersonServiceImpl implements IPersonService {
     }
 
     @Override
+    @Transactional
     public List<Person> findPersonByName(String name) {
         return iPersonDao.findPersonByName(name);
     }
 
     @Override
+    @Transactional
     public List<Person> findPersonByNameStartingWith(String start) {
         return iPersonDao.findPersonByNameStartingWith(start);
     }
 
     @Override
+    @Transactional
     public List<Person> findByLastnameContaining(String contain) {
         return iPersonDao.findByLastnameContaining(contain);
     }
