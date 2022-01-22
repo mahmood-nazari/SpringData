@@ -17,4 +17,6 @@ public interface IPersonDao extends CrudRepository<Person, Long> {
 
     //Opposite of GreaterThan
     List<Person> findByIdLessThanEqual(Long id);
+
+    List<Person> findByIdBetween(Long StartId, Long endId);
 }

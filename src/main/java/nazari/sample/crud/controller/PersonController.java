@@ -37,4 +37,9 @@ public class PersonController {
     public List<Person> findByIdLessThanEqual(@PathVariable Long id) {
         return iPersonService.findByIdLessThanEqual(id);
     }
+
+    @GetMapping("find-by-id-between/{startId}/{endId}")
+    public List<Person> findByIdBetween(@PathVariable Long startId, @PathVariable Long endId) {
+        return iPersonService.findByIdBetween(startId, endId);
+    }
 }

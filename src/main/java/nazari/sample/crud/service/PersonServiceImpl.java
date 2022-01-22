@@ -39,4 +39,10 @@ public class PersonServiceImpl implements IPersonService {
     public List<Person> findByIdLessThanEqual(Long id) {
         return iPersonDao.findByIdLessThanEqual(id);
     }
+
+    @Override
+    @Transactional
+    public List<Person> findByIdBetween(Long startId, Long endId) {
+        return iPersonDao.findByIdBetween(startId, endId);
+    }
 }
