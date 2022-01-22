@@ -45,13 +45,22 @@ public class PersonController {
         return iPersonService.findByIdBetween(startId, endId);
     }
 
-    @PostMapping("find-by-id-in")
-    public List<Person> findByIdIn(@RequestBody Collection<Long> ids) {
+    /*
+    * you must send data according to this pattern:
+    * [1,4,56,6,10,20]
+    * */
+    @PostMapping("find-by-id-in-body")
+    public List<Person> findByIdInBody(@RequestBody Collection<Long> ids) {
         return iPersonService.findByIdIn(ids);
     }
 
-//    @GetMapping("/find-by-id-in")
-//    public List<Person> findByIdIn(@RequestParam Collection<Long> ids) {
-//        return iPersonService.findByIdIn(ids);
-//    }
+
+    /*
+     * you must send data according to this pattern:
+     * localhost:8080/person/find-by-id-in-param?ids=10,15,20,.....
+     * */
+    @GetMapping("/find-by-id-in-param")
+    public List<Person> findByIdInParam(@RequestParam Collection<Long> ids) {
+        return iPersonService.findByIdIn(ids);
+    }
 }
