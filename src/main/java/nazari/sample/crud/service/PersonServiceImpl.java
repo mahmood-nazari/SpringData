@@ -19,4 +19,14 @@ public class PersonServiceImpl implements IPersonService {
     public List<Person> findPersonByName(String name) {
         return iPersonDao.findPersonByName(name);
     }
+
+    @Override
+    public List<Person> findPersonByNameStartingWith(String start) {
+        return iPersonDao.findPersonByNameStartingWith(start);
+    }
+
+    @Override
+    public List<Person> findByLastnameContaining(String contain) {
+        return iPersonDao.findByLastnameContaining(contain);
+    }
 }

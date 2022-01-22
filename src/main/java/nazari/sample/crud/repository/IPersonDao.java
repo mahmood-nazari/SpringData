@@ -10,4 +10,8 @@ import java.util.List;
 public interface IPersonDao extends CrudRepository<Person, Long> {
 
     List<Person> findPersonByName(String name);
+
+    List<Person> findPersonByNameStartingWith(String start);
+
+    List<Person> findByLastnameContaining(String contain);
 }

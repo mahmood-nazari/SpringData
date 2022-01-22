@@ -8,4 +8,8 @@ public interface IPersonService {
 
     List<Person> findPersonByName(String name);
 
+    List<Person> findPersonByNameStartingWith(String start);
+
+    List<Person> findByLastnameContaining(String contain);
+
 }
