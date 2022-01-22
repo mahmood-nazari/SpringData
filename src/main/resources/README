@@ -1,3 +1,3 @@
 this simple code shows us how to use CrudRepository for basic operation like create, read, update and delete on MVC framework.
 I use postgresql as database, Spring boot as framework, java 8 and postman for test api.
-hope it will usefull for you.
+hope it will useful for you.
