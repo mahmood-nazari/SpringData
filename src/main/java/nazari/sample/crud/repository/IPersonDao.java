@@ -14,4 +14,6 @@ public interface IPersonDao extends CrudRepository<Person, Long> {
     List<Person> findPersonByNameStartingWith(String start);
 
     List<Person> findByLastnameContaining(String contain);
+
+    List<Person> findByIdLessThanEqual(Long id);
 }

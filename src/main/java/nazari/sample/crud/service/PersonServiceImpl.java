@@ -33,4 +33,10 @@ public class PersonServiceImpl implements IPersonService {
     public List<Person> findByLastnameContaining(String contain) {
         return iPersonDao.findByLastnameContaining(contain);
     }
+
+    @Override
+    @Transactional
+    public List<Person> findByIdLessThanEqual(Long id) {
+        return iPersonDao.findByIdLessThanEqual(id);
+    }
 }

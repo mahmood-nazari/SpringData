@@ -12,4 +12,7 @@ public interface IPersonService {
 
     List<Person> findByLastnameContaining(String contain);
 
+    List<Person> findByIdLessThanEqual(Long id);
+
+
 }
