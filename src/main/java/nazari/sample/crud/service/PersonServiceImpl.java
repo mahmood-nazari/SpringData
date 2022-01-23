@@ -52,4 +52,10 @@ public class PersonServiceImpl implements IPersonService {
     public List<Person> findByIdIn(Collection<Long> ids) {
         return iPersonDao.findByIdIn(ids);
     }
+
+    @Override
+    @Transactional
+    public List<Person> findPersonByNameOrderByNameDesc(String name) {
+        return iPersonDao.findPersonByNameOrderByNameDesc(name);
+    }
 }

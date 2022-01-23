@@ -5,7 +5,6 @@ import nazari.sample.crud.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -46,9 +45,9 @@ public class PersonController {
     }
 
     /*
-    * you must send data according to this pattern:
-    * [1,4,56,6,10,20]
-    * */
+     * you must send data according to this pattern:
+     * [1,4,56,6,10,20]
+     * */
     @PostMapping("find-by-id-in-body")
     public List<Person> findByIdInBody(@RequestBody Collection<Long> ids) {
         return iPersonService.findByIdIn(ids);
@@ -62,5 +61,10 @@ public class PersonController {
     @GetMapping("/find-by-id-in-param")
     public List<Person> findByIdInParam(@RequestParam Collection<Long> ids) {
         return iPersonService.findByIdIn(ids);
+    }
+
+    @GetMapping("find-by-name-dec")
+    public List<Person> findPersonByNameOrderByNameDesc(@RequestParam String name) {
+        return iPersonService.findPersonByNameOrderByNameDesc(name);
     }
 }

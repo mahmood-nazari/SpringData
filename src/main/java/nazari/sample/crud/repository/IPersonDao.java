@@ -22,4 +22,6 @@ public interface IPersonDao extends CrudRepository<Person, Long> {
     List<Person> findByIdBetween(Long StartId, Long endId);
 
     List<Person> findByIdIn(Collection<Long> id);
+
+    List<Person> findPersonByNameOrderByNameDesc(String name);
 }

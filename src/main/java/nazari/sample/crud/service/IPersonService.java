@@ -19,5 +19,6 @@ public interface IPersonService {
 
     List<Person> findByIdIn(Collection<Long> ids);
 
+    List<Person> findPersonByNameOrderByNameDesc(String name);
 
 }
